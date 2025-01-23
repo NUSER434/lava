@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
+            {{ __('Информация о профиле') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Обновите информацию профиля.") }}
         </p>
     </header>
 
@@ -18,9 +18,33 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Имя')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        </div>
+
+        <div>
+            <x-input-label for="middlename" :value="__('Фамилия')" />
+            <x-text-input id="middlename" name="middlename" type="text" class="mt-1 block w-full" :value="old('middlename', $user->middlename)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('middlename')" />
+        </div>
+
+        <div>
+            <x-input-label for="lastname" :value="__('Отчество')" />
+            <x-text-input id="lastname" name="lastname" type="text" class="mt-1 block w-full" :value="old('lastname', $user->lastname)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('middlename')" />
+        </div>
+
+        <div>
+            <x-input-label for="login" :value="__('Логин')" />
+            <x-text-input id="login" name="login" type="text" class="mt-1 block w-full" :value="old('login', $user->login)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('middlename')" />
+        </div>
+
+        <div>
+            <x-input-label for="tel" :value="__('Телефон')" />
+            <x-text-input id="tel" name="tel" type="text" class="mt-1 block w-full" :value="old('tel', $user->tel)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('middlename')" />
         </div>
 
         <div>
@@ -48,7 +72,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button>{{ __('Сохранить') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p
