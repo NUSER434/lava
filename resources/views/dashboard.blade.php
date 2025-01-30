@@ -43,8 +43,8 @@
         <div class="mb-4">
             <label for="payment" class="block text-sm font-medium text-gray-700">Тип оплаты</label>
             <select name="payment" id="payment" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
-                <option value="cash">Наличные</option>
-                <option value="card">Банковская карта</option>
+                <option value="payment">Наличные</option>
+                <option value="payment">Банковская карта</option>
             </select>
         </div>
         <div class="flex items-center justify-end">
